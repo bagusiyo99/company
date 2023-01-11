@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,12 @@ Route::get('/login', function () {
 // Admin
 Route::prefix('/admin')->group(function (){
     Route::get('/dasboard', function () {
-        return view ('admin.layouts.wrapper');
+         $data = [
+        'content'=> 'admin/dasboard/index'
+    ];
+
+        return view ('admin.layouts.wrapper', $data);
     });
+
+    Route::resource('/user', AdminUserController::class);
 });

@@ -19,7 +19,7 @@
             <li class="nav-item">
                 <a class="nav-link  {{ Request::is ('service') ? 'menu-active' :'' }}" href="/service">Service</a>
             </li>
-            <li class="nav-item">
+                       <li class="nav-item">
                 <a class="nav-link  {{ Request::is ('blog') ? 'menu-active' :'' }}" href="/blog">Blog</a>
             </li>
             <li class="nav-item">
@@ -27,7 +27,7 @@
             </li>
             </ul>
             <form class="d-flex">
-                <a href="/login" class="btn btn-primary" ><i class="fa-solid fa-right-to-bracket"></i> Login </a>
+       <a href="/login" class="btn btn-primary" ><i class="fa-solid fa-right-to-bracket"></i> Login </a>
             </form>
         </div>
         </div>
