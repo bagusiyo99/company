@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\Http\Models\User;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class AdminUserController extends Controller
 {
@@ -16,6 +19,8 @@ class AdminUserController extends Controller
     public function index()
     {
         $data =[
+            'title' => 'Manajemen User',
+            'user' => User::get(),
             'content' => 'admin/user/index'
         ];
         return view ('admin.layouts.wrapper', $data );
@@ -28,7 +33,12 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        //
+        $data =[
+            'title' => 'Tambah User',
+            'content' => 'admin/user/add'
+        ];
+        
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -39,7 +49,17 @@ class AdminUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> validate ([
+            'name' => 'required',
+            'email' => 'required |unique:users',
+            'password' => 'required',
+        ]);
+
+            // $data['password'] = Hash::make($data ['password']);
+                    Alert::alert('Sukses', 'Data Berhasil Ditambah');
+                    User::create ($data);
+                    return redirect ('/admin/user');
+
     }
 
     /**
@@ -61,7 +81,12 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data =[
+            'title' => 'Edit User',
+            'user' => User::find ($id),
+            'content' => 'admin/user/add'
+        ];
+        return view ('admin.layouts.wrapper', $data ); 
     }
 
     /**
@@ -72,8 +97,18 @@ class AdminUserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $user = User::find ($id);
+        $data = $request -> validate ([
+            'name' => 'required',
+            'email' => 'required |unique:users, email,' .$user->id,
+            // 'password' => 'required',
+        ]);
+
+            // $data['password'] = Hash::make($data ['password']);
+                    $user->update($data);
+                    return redirect ('/admin/user');
+
     }
 
     /**
@@ -84,6 +119,11 @@ class AdminUserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find ($id);
+        $user->delete();
+        Alert::alert('Sukses', 'Data Berhasil Dihapus');
+
+        return redirect ('/admin/user');
+
     }
 }
