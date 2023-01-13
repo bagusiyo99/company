@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBannerController;
+use App\Http\Controllers\AdminMengaturController;
+use App\Http\Controllers\AdminAboutController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -78,5 +82,9 @@ Route::prefix('/admin')->group(function (){
 
     Route::resource('/user', AdminUserController::class);
     Route::resource('/banner', AdminBannerController::class);
+    Route::resource('/mengatur', AdminMengaturController::class);
+    Route::resource('/about', AdminAboutController::class);
+
+
 
 });
