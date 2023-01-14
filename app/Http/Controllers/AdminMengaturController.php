@@ -111,10 +111,7 @@ class AdminMengaturController extends Controller
          $data = $request -> validate ([
             'judul' => 'required',
             'deskripsi' => 'required ',
-            // 'icon' => 'required',
-            // 'gambar' => 'required',
-            // 'urutan' => 'required',
-            // 'gambar' => 'required',
+
         ]);
 
         // upload gambar

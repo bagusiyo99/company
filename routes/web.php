@@ -5,6 +5,11 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminMengaturController;
 use App\Http\Controllers\AdminAboutController;
+use App\Http\Controllers\AdminTentangController;
+use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminKategoriController;
+
+
 
 
 
@@ -79,6 +84,16 @@ Route::prefix('/admin')->group(function (){
 
         return view ('admin.layouts.wrapper', $data);
     });
+
+    
+    Route::get('/tentang', [AdminTentangController::class, 'index']);
+    Route::put('/tentang/update', [AdminTentangController::class, 'update']);
+
+    
+
+
+    Route::resource('/blog', AdminBlogController::class);
+    Route::resource('/kategori', AdminKategoriController::class);
 
     Route::resource('/user', AdminUserController::class);
     Route::resource('/banner', AdminBannerController::class);
