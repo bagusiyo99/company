@@ -38,17 +38,19 @@ class AdminTentangController extends Controller
             $gambar = $request->file('gambar');
             $file_name = time ().'-'. $gambar -> getClientOriginalName ();
 
-            $storage = 'uploads/te$tentang/';
+            $storage = 'uploads/tentang/';
             $gambar->move ($storage, $file_name);
             $data ['gambar'] =$storage .$file_name;
         }else {
-            $data ['gambar'] = $tentang ->gambar;
+            $data ['gambar'] = $request ->gambar;
         }
             // $data['password'] = Hash::make($data ['password']);
                     $tentang->update($data);
                     return redirect ('/admin/tentang');
-                                        Alert::alert('Sukses', 'Data Berhasil Ditambah');
+                Alert::alert('Sukses', 'Data Berhasil Ditambah');
 
 
     }
 }
+
+

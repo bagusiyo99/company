@@ -52,8 +52,8 @@
                             </div>
                         @enderror
 
-                        @if (isset($banner))
-                            <img src="/{{ $banner->gambar }}" width="100%" class="mt-4" alt="">
+                        @if (isset($tentang))
+                            <img src="/{{ $tentang->gambar }}" width="100%" class="mt-4" alt="">
                         @endif
                     </div>
 

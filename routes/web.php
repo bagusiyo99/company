@@ -77,7 +77,7 @@ Route::get('/login', function () {
 // Admin
 Route::prefix('/admin')->group(function (){
     Route::get('/dasboard', function () {
-         $data = [
+        $data = [
         'title' => 'dasboard',
         'content'=> 'admin/dasboard/index'
     ];
