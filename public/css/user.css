@@ -1,3 +1,44 @@
+.icon {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*****************************
+    NavBar
+******************************/
+header nav {
+    background: #fff;
+    box-shadow: 0px 0px 5px #4444;
+}
+
+header nav a.navbar-brand h2 {
+
+    color: orange;
+}
+
+header nav ul.action-menu .nav-item .nav-link {
+    margin: 0px 20px;
+    font-size: 18px;
+}
+
+.navbar-toggler {
+    outline: none !important;
+    outline-color: transparent !important;
+    padding: none !important;
+    border: none !important;
+    border-radius: none !important;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: green;
+}
+
+.baca {
+    color: orange;
+}
+
 .menu-active {
     color: orange !important;
     font-weight: 700;
@@ -70,39 +111,33 @@
 
 /* card */
 
-
 .atur {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #eef2f5;
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    font-family: "montserrat", sans-serif;
 }
 
 .card-jurusan {
     width: 280px;
     background-color: #f0f0f0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px #1b1b1b33;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px #243763;
     margin: 15px;
     transition: all 0.3s;
 }
 
 .card-image {
     width: 100%;
-    height: 230px;
-    border-radius: 5px 5px 0 0;
+    height: 250px;
 }
 
 .card-image img {
     width: 100%;
     max-width: 100%;
-    height: 230px;
-    border-radius: 5px 5px 0 0;
+    height: 250px;
+    border-radius: 15px 15px 0 0;
     transition: all 0.3s;
 }
 
@@ -110,43 +145,46 @@
     width: 100%;
     height: auto;
     background-color: #ffffff;
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 15px 15px;
     padding: 25px;
 }
 
 .card-description h3 {
     color: #222222;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
 .card-description p {
-    color: #89ba16;
+    color: #243763;
     font-size: 14px;
     margin-bottom: 16px;
 }
 
 .card-description a {
-    color: #89ba16;
+    color: white;
     font-weight: 500;
     text-decoration: none;
     text-transform: uppercase;
+    background-color: #243763;
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+.card-description a:hover {
+    background-color: #227C70;
 }
 
 .card-jurusan:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 30px -5px rgba(10, 16, 34, 0.2);
+    box-shadow: 0 10px 30px -5px #227C70
 }
 
 .card-image img:hover {
     opacity: 0.8;
 }
-
-.loginn {
-    margin-left: 200px;
-}
-
 
 /* page informasi */
 
@@ -250,4 +288,69 @@
     text-align: justify;
 
 
+}
+
+/* blog informasi index*/
+#blog {
+    padding: 0px 150px 0 100px;
+}
+
+#blog .blog-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+#blog .blog-img {
+    width: 60%;
+    margin-right: 40px;
+}
+
+#blog img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#blog .blog-detail {
+    width: 70%;
+}
+
+#blog .blog-detail h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: justify;
+
+}
+
+#blog .blog-detail p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: justify;
+
+
+}
+
+#blog .blog-detail a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    font-weight: 700;
+    position: relative;
+    margin-top: 25px;
+    background-color: #0A2647;
+    padding: 2%;
+    margin-bottom: 20px;
+}
+
+
+#blog .blog-detail a:hover {
+    color: #243763;
+    background-color: #81cc08;
+
+}
+
+#blog .blog-detail a:hover::after {
+    background-color: #81cc08;
 }

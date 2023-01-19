@@ -30,7 +30,7 @@ class AdminTentangController extends Controller
 
         // upload gambar
     if ($request -> hasFile('gambar')) {
-            if($tentang->gambar  != null){
+            if($tentang->gambar  != SQL_NULLABLE){
                 unlink($tentang->gambar);
             }
 

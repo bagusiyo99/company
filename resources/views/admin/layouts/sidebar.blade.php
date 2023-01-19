@@ -42,6 +42,14 @@
                                     <p>blog</p>
                                 </a>
                             </li>
+
+                            <li class="nav-item">
+                                <a href="/admin/informasi" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>informasi </p>
+                                </a>
+                            </li>
+
                             <li class="nav-item">
                                 <a href="/admin/kategori" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>

@@ -7,11 +7,10 @@ use App\Http\Controllers\AdminMengaturController;
 use App\Http\Controllers\AdminAboutController;
 use App\Http\Controllers\AdminTentangController;
 use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminInformasiController;
 use App\Http\Controllers\AdminKategoriController;
-
-
-
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +23,11 @@ use App\Http\Controllers\AdminKategoriController;
 |
 */
 
-Route::get('/', function () {
-    $data = [
-        'content'=> 'home/home/index'
-    ];
-    return view('home.layouts.wrapper',$data);
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/informasi', [HomeInfoController::class, 'index']);
+Route::get('/informasi/detail/{id}', [HomeInfoController::class, 'detail']);
+
+
 
 
 
@@ -67,6 +65,7 @@ Route::get('/contact', function () {
 });
 
 
+
 Route::get('/login', function () {
     $data = [
         'content'=> 'home/auth/index'
@@ -89,9 +88,6 @@ Route::prefix('/admin')->group(function (){
     Route::get('/tentang', [AdminTentangController::class, 'index']);
     Route::put('/tentang/update', [AdminTentangController::class, 'update']);
 
-    
-
-
     Route::resource('/blog', AdminBlogController::class);
     Route::resource('/kategori', AdminKategoriController::class);
 
@@ -99,6 +95,8 @@ Route::prefix('/admin')->group(function (){
     Route::resource('/banner', AdminBannerController::class);
     Route::resource('/mengatur', AdminMengaturController::class);
     Route::resource('/about', AdminAboutController::class);
+        Route::resource('/informasi', AdminInformasiController::class);
+
 
 
 

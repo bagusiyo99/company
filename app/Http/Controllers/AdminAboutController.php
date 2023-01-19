@@ -17,7 +17,7 @@ class AdminAboutController extends Controller
     {
         $data =[
             'title' => 'Manajemen Mengatur',
-            'about' => About::get(),
+            'about' => About::limit(1)->get(),
             'content' => 'admin/about/index'
         ];
         return view ('admin.layouts.wrapper', $data );

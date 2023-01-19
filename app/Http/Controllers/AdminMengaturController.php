@@ -17,7 +17,7 @@ class AdminMengaturController extends Controller
     {
         $data =[
             'title' => 'Manajemen Mengatur',
-            'mengatur' => Mengatur::get(),
+            'mengatur' => Mengatur::paginate(),
             'content' => 'admin/mengatur/index'
         ];
         return view ('admin.layouts.wrapper', $data );

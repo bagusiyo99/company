@@ -24,26 +24,9 @@
                     @enderror
                 </div>
 
-
-                {{-- <div class="form-group">
-                    <label for="">Icon</label>
-                    <input type="text" name="icon"
-                        class="form-control   
-                            @error('icon')
-                            is-invalid
-                            @enderror"
-                        placeholder="Icon" value="{{ isset($about) ? $about->icon : old('icon') }}">
-                    <a href="https://fontawesome.com/" target="blank"> Klik Untuk Mencari Icon </a>
-                    @error('icon')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div> --}}
-
                 <div class="form-group">
                     <label for="">Deskripsi</label>
-                    <textarea name="deskripsi"class="form-control" id="" cols="30" rows="10">{{ isset($about) ? $about->deskripsi : '' }} </textarea>
+                    <textarea name="deskripsi"class="form-control" id="summernote" cols="30" rows="10">{{ isset($about) ? $about->deskripsi : '' }} </textarea>
                     @error('deskripsi')
                         <div class="invalid-feedback">
                             {{ $message }}
